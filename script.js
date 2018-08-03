@@ -4,37 +4,42 @@ var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 var section = document.getElementById("gradientSection");
 
+/* Auswahl Linear oder Radial */
 var shape = document.querySelector(".shape");
-
+/* Auswahl Form Radial */
 var radialSelection = document.getElementById("radialShape");
 var radialType = document.querySelector(".radialType");
-
+/* Auswahl Richtung linear */
 var linearSelection = document.getElementById("linearSelection");
 var linearDirection = document.querySelector(".linearDirection");
-
+/* Repeat */
 var repeat = document.getElementById("repeat");
+/* percent color */
+var percentColor1 = document.getElementById("color1Percent");
+var percentColor2 = document.getElementById("color2Percent");
+
 
 color1.value = "#ff0000";
 color2.value = "#ffff00";
 type = "";
 
-console.log(repeat.checked);
+console.log(color1);
 
 function setGradient() {
   if (repeat.checked) {
-    console.log(repeat.value);
+
     if (shape.value === "radial") {
-      body.style.background =
+      /* body.style.background =
         repeat.value +
         "-" +
         shape.value +
         "-gradient(" +
         radialType.value +
         ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
+        color1.value + " " + percentColor1.value +
+        "%, " +
+        color2.value + " " + percentColor2.value +
+        "%)"; */
 
       section.style.background =
         repeat.value +
@@ -43,25 +48,21 @@ function setGradient() {
         "-gradient(" +
         radialType.value +
         ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
+        color1.value + " " + percentColor1.value +
+        "%, " +
+        color2.value + " " + percentColor2.value +
+        "%)";
 
       css.textContent = body.style.background + ";";
     } else {
-      body.style.background =
-        repeat.value +
-        "-" +
-        shape.value +
-        "-gradient(" +
-        linearDirection.value +
+      /* body.style.background =
+        repeat.value + "-" + shape.value + "-gradient(" + linearDirection.value +
         ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
-
+        color1.value + " " + percentColor1.value +
+        "%, " +
+        color2.value + " " + percentColor2.value +
+        "%)";
+ */
       section.style.background =
         repeat.value +
         "-" +
@@ -69,58 +70,64 @@ function setGradient() {
         "-gradient(" +
         linearDirection.value +
         ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
+        color1.value + " " + percentColor1.value +
+        "%, " +
+        color2.value + " " + percentColor2.value +
+        "%)";
 
       css.textContent = body.style.background + ";";
     }
   } else {
     if (shape.value === "radial") {
-      body.style.background =
+      /* body.style.background =
         shape.value +
         "-gradient(" +
         radialType.value +
-        ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
-
+        ", " + "(" +
+        color1.value + " " + percentColor1.value +
+        "%, " +
+        color2.value + " " + percentColor2.value +
+        "%)";
+ */
       section.style.background =
         shape.value +
         "-gradient(" +
         radialType.value +
         ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
+        color1.value + " " + percentColor1.value +
+        "%, " +
+        color2.value + " " + percentColor2.value +
+        "%)";
 
       css.textContent = body.style.background + ";";
+
+      console.log(body.style.background)
     } else {
-      body.style.background =
+      /* body.style.background =
         shape.value +
         "-gradient(" +
         linearDirection.value +
         ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
-
+        color1.value + " " + percentColor1.value +
+        "%, " +
+        color2.value + " " + percentColor2.value +
+        "%)";
+ */
       section.style.background =
         shape.value +
         "-gradient(" +
         linearDirection.value +
         ", " +
-        color1.value +
-        ", " +
-        color2.value +
-        ")";
+        color1.value + " " + percentColor1.value +
+        "%," +
+        color2.value + " " + percentColor2.value +
+        "%)";
 
       css.textContent = body.style.background + ";";
+      console.log(section.style.background);
+      console.log(percentColor1.value);
+      console.log(percentColor2.value);
+
     }
   }
 }
@@ -143,7 +150,8 @@ shape.addEventListener("input", setradialShape);
 shape.addEventListener("input", setLinearSelection);
 radialType.addEventListener("input", setGradient);
 linearDirection.addEventListener("input", setGradient);
-
+percentColor1.addEventListener("input", setGradient);
+percentColor2.addEventListener("input", setGradient);
 color1.addEventListener("input", setGradient);
 
 color2.addEventListener("input", setGradient);
