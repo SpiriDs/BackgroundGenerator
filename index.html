@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Gradient Background</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body id="gradient">
+	<h1>Background Generator</h1>
+
+	<div class="center">
+		<h2>1. Shape of gradient</h2>
+		<p>Select the shape of the Gradient</p>
+		<select class="shape selectStyle" name="shape">
+			<option value="linear">Linear</option>
+			<option value="radial">Radial</option>
+		</select>
+	</div>
+	<br>
+	<div id="radialShape" class="visible form-group col-6 center">
+		<select class="radialType selectStyle" name="radialType">
+			<option value="circle">Circle</option>
+			<option value="ellipse">Ellipse</option>
+		</select>
+	</div>
+	<div id="linearSelection" class="center">
+		<select class="linearDirection selectStyle" name="radialType">
+			<option value="to right">Left to Right</option>
+			<option value="to left">Right to Left</option>
+			<option value="to bottom">Top to Bottom</option>
+			<option value="to top">Bottom to Top</option>
+			<option value="to bottom right">Top-Left to Bottom-Right</option>
+			<option value="to bottom left">Top-Right to Bottom-Left</option>
+			<option value="to top left">Bottom-Left To Top-Left</option>
+			<option value="to top right">Bottom-Right To Top-Right</option>
+		</select>
+	</div>
+	<br>
+	<div>
+		<br>
+		<input type="checkbox" name="repeat" id="repeat" value="repeating"> Repeat?
+	</div>
+	<hr>
+	<div class="center">
+		<h2>2. Colors</h2>
+		<p>Select the colors of the Gradient</p>
+		<input class="color1 colorStyle" type="color" name="color1" value="#ff0000">
+		<input class="color2 colorStyle" type="color" name="color2" value="#ffff00">
+	</div>
+	<hr>
+	<div>
+		<h2>Current CSS Background</h2>
+		<h3></h3>
+	</div>
+	<section id="gradientSection"></section>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
