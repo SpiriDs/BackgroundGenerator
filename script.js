@@ -17,9 +17,7 @@ var repeat = document.getElementById("repeat");
 /* percent color */
 var percentColor1 = document.getElementById("color1Percent");
 var percentColor2 = document.getElementById("color2Percent");
-
-
-
+/* StartColors */
 color1.value = "#ff0000";
 color2.value = "#ffff00";
 
